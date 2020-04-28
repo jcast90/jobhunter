@@ -1,3 +1,7 @@
+## Simple application for job hunting
+Using the remotive API and remote OK API we source job remote job postings and display them in a fun way!
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
