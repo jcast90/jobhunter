@@ -9,6 +9,7 @@ Using the remotive API and remote OK API we source job remote job postings and d
 - clean up UI, create a dashboard that shows a list of jobs, the map view, and potentially salary rankings if applicable
 - add in loader animation
 - show options for categories (ie. designer, developer, product manager, etc.)
+- add unit/component testing
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
