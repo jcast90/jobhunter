@@ -11,6 +11,10 @@ Using the remotive API and remote OK API we source job remote job postings and d
 - show options for categories (ie. designer, developer, product manager, etc.)
 - add unit/component testing
 
+## WorkFlow
+- branch off master always
+- create your own branch (feature, bug, hotfix, etc.) => feature/add-testing-jl (add your initial at the end to avoid branch conflicts)
+- request PR
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
