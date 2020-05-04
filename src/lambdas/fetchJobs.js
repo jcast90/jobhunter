@@ -1,4 +1,4 @@
-// import fetch from 'node-fetch';
+import fetch from 'node-fetch';
 
 const fetchData = async ({ tags, limit, search, category, companyName }) => {
   const tagBuilder = tags ? `tags=${tags}&` : '';
@@ -8,14 +8,11 @@ const fetchData = async ({ tags, limit, search, category, companyName }) => {
   const companyNameBuilder = companyName ? `company_name=${companyName}&` : '';
   const url = `https://remotive.io/api/remote-jobs?${searchBuilder}${tagBuilder}${limitBuilder}${categoryBuilder}${companyNameBuilder}`;
 
-  // const jobs = await fetch(url).then((res) => res.json());
-  // const data = await jobs;
-  const data = { test: 'test'}
-  return data;
+  return await fetch(url).then((res) => res.json());
 };
 
 export async function handler(event, context, callback) {
-  const { tags, limit, search, category, companyName } = event;
+  const { tags, limit, search, category, companyName } = JSON.parse(event.body);
 
   try {
     const data = await fetchData({
@@ -25,11 +22,11 @@ export async function handler(event, context, callback) {
       category,
       companyName,
     });
-    const res = await data.json();
-    console.log(res);
+    const res = await data;
+
     return {
       statusCode: 200,
-      body: JSON.stringify({ jobs: res }),
+      body: JSON.stringify({ ...res }),
     };
   } catch (err) {
     return {

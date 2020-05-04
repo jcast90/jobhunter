@@ -14,7 +14,7 @@ const fetchJobs = async ({
   limit,
 }: JProps): Promise<any> => {
   const response = await fetch('/.netlify/functions/fetchJobs', {
-    method: 'GET',
+    method: 'POST',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
@@ -27,6 +27,7 @@ const fetchJobs = async ({
       limit,
     }),
   });
+
   const jobs = await response.json();
 
   console.log(jobs);
