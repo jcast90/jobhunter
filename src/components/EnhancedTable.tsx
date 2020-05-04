@@ -1,7 +1,9 @@
 import React from 'react';
-import parse from 'html-react-parser';
-import clsx from 'clsx';
-import { createStyles, lighten, makeStyles, Theme } from '@material-ui/core/styles';
+import {
+  createStyles,
+  makeStyles,
+  Theme,
+} from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -10,24 +12,17 @@ import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import TableSortLabel from '@material-ui/core/TableSortLabel';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Checkbox from '@material-ui/core/Checkbox';
-import IconButton from '@material-ui/core/IconButton';
-import Tooltip from '@material-ui/core/Tooltip';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
-import DeleteIcon from '@material-ui/icons/Delete';
-import FilterListIcon from '@material-ui/icons/FilterList';
-import { Grid } from '@material-ui/core';
 import { LocalStateContext } from '../globalState';
 
 interface Data {
-  title: string,
-  companyName: string,
-  tags: string[],
-  published: string,
+  title: string;
+  companyName: string;
+  tags: string[];
+  published: string;
   id: number;
   url: string;
   details: string;
@@ -40,25 +35,25 @@ function createData({
   published,
   id,
   url,
-  details
+  details,
 }: Data): Data {
   return { title, companyName, tags, published, id, url, details };
 }
 
 const createRows = (data: any) => {
-  return data.map(( job: any ) => {
+  return data.map((job: any) => {
     const rowData = {
       title: job.title,
-      companyName: job.company_name,
+      companyName: job.companyName,
       tags: job.tags,
       published: job.publication_date,
       id: job.id,
       url: job.url,
-      details: job.details
-    }
-    return createData(rowData)
+      details: job.details,
+    };
+    return createData(rowData);
   });
-}
+};
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
   if (b[orderBy] < a[orderBy]) {
@@ -74,8 +69,11 @@ type Order = 'asc' | 'desc';
 
 function getComparator<Key extends keyof any>(
   order: Order,
-  orderBy: Key,
-): (a: { [key in Key]: number | string }, b: { [key in Key]: number | string }) => number {
+  orderBy: Key
+): (
+  a: { [key in Key]: number | string },
+  b: { [key in Key]: number | string }
+) => number {
   return order === 'desc'
     ? (a, b) => descendingComparator(a, b, orderBy)
     : (a, b) => -descendingComparator(a, b, orderBy);
@@ -100,16 +98,68 @@ interface HeadCell {
 
 const headCells: HeadCell[] = [
   { id: 'title', numeric: false, disablePadding: true, label: 'Job Title' },
-  { id: 'companyName', numeric: false, disablePadding: false, label: 'Company Name' },
+  {
+    id: 'companyName',
+    numeric: false,
+    disablePadding: false,
+    label: 'Company Name',
+  },
   { id: 'tags', numeric: false, disablePadding: false, label: 'Tags' },
-  { id: 'published', numeric: false, disablePadding: false, label: 'Date Published' },
-  { id: 'details', numeric: false, disablePadding: false, label: 'View Details' }
+  {
+    id: 'published',
+    numeric: false,
+    disablePadding: false,
+    label: 'Date Published',
+  },
+  {
+    id: 'details',
+    numeric: false,
+    disablePadding: false,
+    label: 'View Details',
+  },
 ];
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      width: '100%',
+    },
+    paper: {
+      width: '100%',
+      marginBottom: theme.spacing(2),
+    },
+    table: {
+      minWidth: 750,
+    },
+    cell: {
+      display: 'flex',
+      flexDirection: 'row',
+    },
+    cellItem: {
+      padding: '0 3px',
+      cursor: 'pointer',
+    },
+    visuallyHidden: {
+      border: 0,
+      clip: 'rect(0 0 0 0)',
+      height: 1,
+      margin: -1,
+      overflow: 'hidden',
+      padding: 0,
+      position: 'absolute',
+      top: 20,
+      width: 1,
+    },
+  })
+);
 
 interface EnhancedTableProps {
   classes: ReturnType<typeof useStyles>;
   numSelected: number;
-  onRequestSort: (event: React.MouseEvent<unknown>, property: keyof Data) => void;
+  onRequestSort: (
+    event: React.MouseEvent<unknown>,
+    property: keyof Data
+  ) => void;
   onSelectAllClick: (event: React.ChangeEvent<HTMLInputElement>) => void;
   order: Order;
   orderBy: string;
@@ -117,8 +167,18 @@ interface EnhancedTableProps {
 }
 
 function EnhancedTableHead(props: EnhancedTableProps) {
-  const { classes, onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } = props;
-  const createSortHandler = (property: keyof Data) => (event: React.MouseEvent<unknown>) => {
+  const {
+    classes,
+    onSelectAllClick,
+    order,
+    orderBy,
+    numSelected,
+    rowCount,
+    onRequestSort,
+  } = props;
+  const createSortHandler = (property: keyof Data) => (
+    event: React.MouseEvent<unknown>
+  ) => {
     onRequestSort(event, property);
   };
 
@@ -159,42 +219,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
   );
 }
 
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      width: '100%',
-    },
-    paper: {
-      width: '100%',
-      marginBottom: theme.spacing(2),
-    },
-    table: {
-      minWidth: 750,
-    },
-    cell: {
-      display: 'flex',
-      flexDirection: 'row',
-    },
-    cellItem: {
-      padding: '0 3px',
-      cursor: 'pointer'
-    },
-    visuallyHidden: {
-      border: 0,
-      clip: 'rect(0 0 0 0)',
-      height: 1,
-      margin: -1,
-      overflow: 'hidden',
-      padding: 0,
-      position: 'absolute',
-      top: 20,
-      width: 1,
-    },
-  }),
-);
-
-export default function EnhancedTable({ data }:any) {
+export default function EnhancedTable({ data }: any) {
   const classes = useStyles();
   const { filters, updateFilters } = React.useContext(LocalStateContext);
   const [order, setOrder] = React.useState<Order>('asc');
@@ -203,10 +228,13 @@ export default function EnhancedTable({ data }:any) {
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
-  const [ tagsList, setTagsList ] = React.useState([]);
+  const [tagsList, setTagsList] = React.useState([]);
   const rows = createRows(data);
 
-  const handleRequestSort = (event: React.MouseEvent<unknown>, property: keyof Data) => {
+  const handleRequestSort = (
+    event: React.MouseEvent<unknown>,
+    property: keyof Data
+  ) => {
     const isAsc = orderBy === property && order === 'asc';
     setOrder(isAsc ? 'desc' : 'asc');
     setOrderBy(property);
@@ -234,7 +262,7 @@ export default function EnhancedTable({ data }:any) {
     } else if (selectedIndex > 0) {
       newSelected = newSelected.concat(
         selected.slice(0, selectedIndex),
-        selected.slice(selectedIndex + 1),
+        selected.slice(selectedIndex + 1)
       );
     }
 
@@ -245,7 +273,9 @@ export default function EnhancedTable({ data }:any) {
     setPage(newPage);
   };
 
-  const handleChangeRowsPerPage = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeRowsPerPage = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
@@ -253,15 +283,16 @@ export default function EnhancedTable({ data }:any) {
   const handleChangeDense = (event: React.ChangeEvent<HTMLInputElement>) => {
     setDense(event.target.checked);
   };
-  
-  const handleFilters = (event:any ): any => {
-    const newTagList: any = [...filters, event.target.innerText]
-    updateFilters(newTagList)
-  }
+
+  const handleFilters = (event: any): any => {
+    const newTagList: any = [...filters, event.target.innerText];
+    updateFilters(newTagList);
+  };
 
   const isSelected = (title: any) => selected.indexOf(title) !== -1;
 
-  const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
+  const emptyRows =
+    rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
   return (
     <div className={classes.root}>
@@ -285,38 +316,55 @@ export default function EnhancedTable({ data }:any) {
             <TableBody>
               {stableSort(rows, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                .map((row: any, index: number): JSX.Element => {
-                  const isItemSelected = isSelected(row.title);
-                  const labelId = `enhanced-table-checkbox-${index}`;
+                .map(
+                  (row: any, index: number): JSX.Element => {
+                    const isItemSelected = isSelected(row.title);
+                    const labelId = `enhanced-table-checkbox-${index}`;
 
-                  return (
-                    <TableRow
-                      hover
-                      onClick={(event) => handleClick(event, row.title)}
-                      role="checkbox"
-                      aria-checked={isItemSelected}
-                      tabIndex={-1}
-                      key={row.id}
-                      selected={isItemSelected}
-                    >
-                      <TableCell padding="checkbox">
-                        <Checkbox
-                          checked={isItemSelected}
-                          inputProps={{ 'aria-labelledby': labelId }}
-                        />
-                      </TableCell>
-                      <TableCell component="th" id={labelId} scope="row" padding="none">
-                        {row.title}
-                      </TableCell>
-                      <TableCell align="left">{row.companyName}</TableCell>
-                      <TableCell align="left" className={classes.cell}>{row.tags.map( (tag: any) => {
-                        return <span key={tag} onClick={handleFilters} className={classes.cellItem}>{tag}</span>
-                      })}</TableCell>
-                      <TableCell align="left">{row.published}</TableCell>
-                      <TableCell align="left"></TableCell>
-                    </TableRow>
-                  );
-                })}
+                    return (
+                      <TableRow
+                        hover
+                        onClick={(event) => handleClick(event, row.title)}
+                        role="checkbox"
+                        aria-checked={isItemSelected}
+                        tabIndex={-1}
+                        key={row.id}
+                        selected={isItemSelected}
+                      >
+                        <TableCell padding="checkbox">
+                          <Checkbox
+                            checked={isItemSelected}
+                            inputProps={{ 'aria-labelledby': labelId }}
+                          />
+                        </TableCell>
+                        <TableCell
+                          component="th"
+                          id={labelId}
+                          scope="row"
+                          padding="none"
+                        >
+                          {row.title}
+                        </TableCell>
+                        <TableCell align="left">{row.companyName}</TableCell>
+                        <TableCell align="left" className={classes.cell}>
+                          {row.tags.map((tag: any) => {
+                            return (
+                              <span
+                                key={tag}
+                                onClick={handleFilters}
+                                className={classes.cellItem}
+                              >
+                                {tag}
+                              </span>
+                            );
+                          })}
+                        </TableCell>
+                        <TableCell align="left">{row.published}</TableCell>
+                        <TableCell align="left"></TableCell>
+                      </TableRow>
+                    );
+                  }
+                )}
               {emptyRows > 0 && (
                 <TableRow style={{ height: (dense ? 33 : 53) * emptyRows }}>
                   <TableCell colSpan={6} />

@@ -1,0 +1,62 @@
+{
+  "presets": [
+    "@babel/preset-react",
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "chrome": "63",
+          "node": "current"
+        },
+        "modules": false
+      }
+    ]
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-proposal-export-default-from",
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "~src": "./src",
+          "~components": "./src/components",
+          "~pages": "./src/pages"
+        }
+      }
+    ],
+    [
+      "@babel/plugin-proposal-pipeline-operator",
+      {
+        "proposal": "minimal"
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        [
+          "istanbul",
+          {
+            "exclude": [
+              "**/*.spec.js"
+            ]
+          }
+        ],
+        "inline-react-svg"
+      ],
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "chrome": "63",
+              "node": "current"
+            }
+          }
+        ]
+      ]
+    }
+  }
+}

@@ -18,56 +18,56 @@ const useStyles = makeStyles((theme: Theme) =>
     paper: {
       padding: theme.spacing(2),
       textAlign: 'center',
-    }
-  }),
+    },
+  })
 );
 
-interface IProps {
+interface SProps {
   handleSearch: any;
 }
 
-const SearchBar: React.FC<IProps> = ({ handleSearch }: IProps): JSX.Element => {
+const SearchBar: React.FC<SProps> = ({ handleSearch }: SProps): JSX.Element => {
   const { filters, updateFilters } = React.useContext(LocalStateContext);
-  const [ inputValue, setInputValue ] = React.useState('')
+  const [inputValue, setInputValue] = React.useState('');
   const classes = useStyles();
 
   const handleChange = (e: any): any => {
     const value = e.target.value;
     setInputValue(value);
-  }
+  };
 
   const handleSubmit = (): any => {
     const params = {
-      search: inputValue
-    }
+      search: inputValue,
+    };
 
     handleSearch(params);
-  }
+  };
 
   React.useEffect(() => {
     const searchTerms = filters.join(',');
     setInputValue(searchTerms);
-  },[filters]);
+  }, [filters]);
 
   return (
     <div className={classes.root}>
-       <Grid
-          container
-          direction="row"
-          justify="flex-start"
-          alignItems="center"
-        >
-          <Grid item xs={12} sm={9}>
-              <TextField id="standard-basic" value={inputValue} label="Search for a job..." onChange={handleChange} />
-          </Grid>
-          <Grid item xs={12} sm={3}>
-            <Button variant="outlined" color="primary" onClick={ handleSubmit }>
-              Search
-            </Button>
-          </Grid>
+      <Grid container direction="row" justify="flex-start" alignItems="center">
+        <Grid item xs={12} sm={9}>
+          <TextField
+            id="standard-basic"
+            value={inputValue}
+            label="Search for a job..."
+            onChange={handleChange}
+          />
+        </Grid>
+        <Grid item xs={12} sm={3}>
+          <Button variant="outlined" color="primary" onClick={handleSubmit}>
+            Search
+          </Button>
+        </Grid>
       </Grid>
     </div>
-  )
-}
+  );
+};
 
 export default SearchBar;

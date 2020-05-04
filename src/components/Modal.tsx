@@ -25,21 +25,21 @@ const useStyles = makeStyles((theme: Theme) =>
       marginLeft: theme.spacing(2),
       flex: 1,
     },
-  }),
+  })
 );
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & { children?: React.ReactElement },
-  ref: React.Ref<unknown>,
+  ref: React.Ref<unknown>
 ) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-interface IProps {
+interface MProps {
   job: any;
 }
 
-export default function FullScreenDialog({ job }: IProps) {
+export default function FullScreenDialog({ job }: MProps) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -56,24 +56,32 @@ export default function FullScreenDialog({ job }: IProps) {
       <Button variant="outlined" color="primary" onClick={handleClickOpen}>
         Open full-screen dialog
       </Button>
-      <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
+      <Dialog
+        fullScreen
+        open={open}
+        onClose={handleClose}
+        TransitionComponent={Transition}
+      >
         <AppBar className={classes.appBar}>
           <Toolbar>
-            <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
+            <IconButton
+              edge="start"
+              color="inherit"
+              onClick={handleClose}
+              aria-label="close"
+            >
               <CloseIcon />
             </IconButton>
             <Typography variant="h6" className={classes.title}>
-              { job.title }
+              {job.title}
             </Typography>
             <Button autoFocus color="inherit" onClick={handleClose}>
-              <Link href={ job.url }>Apply</Link>
+              <Link href={job.url}>Apply</Link>
             </Button>
           </Toolbar>
         </AppBar>
         <DialogContent>
-          <DialogContentText>
-            {parse(job.description)}
-          </DialogContentText>
+          <DialogContentText>{parse(job.description)}</DialogContentText>
         </DialogContent>
       </Dialog>
     </div>

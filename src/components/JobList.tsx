@@ -1,14 +1,16 @@
 import * as React from 'react';
 import EnhancedTable from './EnhancedTable';
 
-interface IJobListProps {
+interface JobListProps {
   data: any;
 }
 
-const JobList: React.FunctionComponent<IJobListProps> = ({ data }):JSX.Element => {
+const JobList: React.FunctionComponent<JobListProps> = ({
+  data,
+}: JobListProps): JSX.Element => {
   React.useEffect(() => {
-    console.log(data)
-  })
+    console.log(data);
+  });
   return (
     <div>
       <EnhancedTable data={data} />
