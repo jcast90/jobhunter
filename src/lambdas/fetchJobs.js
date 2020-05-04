@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 
-const fetchData = ({ tags, limit, search, category, companyName }) => {
+const fetchData = async ({ tags, limit, search, category, companyName }) => {
   const tagBuilder = tags ? `tags=${tags}&` : '';
   const limitBuilder = limit ? `limit=${limit}&` : '';
   const searchBuilder = search ? `search=${search}&` : '';
