@@ -5,7 +5,7 @@ const fetchData = ({ tags, limit, search, category, companyName }) => {
   const limitBuilder = limit ? `limit=${limit}&` : '';
   const searchBuilder = search ? `search=${search}&` : '';
   const categoryBuilder = category ? `category=${category}&` : '';
-  const companyNameBuilder = companyName ? `companany_name=${companyName}&` : '';
+  const companyNameBuilder = companyName ? `company_name=${companyName}&` : '';
   const url = `https://remotive.io/api/remote-jobs?${searchBuilder}${tagBuilder}${limitBuilder}${categoryBuilder}${companyNameBuilder}`;
 
   const jobs = await fetch(url).then(res => res.json());
