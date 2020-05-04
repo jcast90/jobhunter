@@ -2,6 +2,10 @@
 Using the remotive API and remote OK API we source job remote job postings and display them in a fun way!
 Idea is to create an experience for users. Job searching can be boring and monotonous, let's make it fun!
 
+## Using Functions
+- need to first install netlify-cli: npm install netlify-cli -g (https://www.netlify.com/products/dev/)
+- you will need to run `yarn dev`
+
 ## TODO:
 - add logic for search field to convert tags to "buttons" so a user can remove the tag if they want
 - work on search query so it can be more dynamic
