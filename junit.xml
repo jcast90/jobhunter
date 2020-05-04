@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest_unit_tests" tests="1" failures="1" time="8.297">
+  <testsuite name="src/App.test.tsx" errors="0" failures="1" skipped="0" timestamp="2020-05-04T21:48:08" time="4.609" tests="1">
+    <testcase classname="-renders learn react link" name="-renders learn react link" time="0.151">
+      <failure>Error: Unable to find an element with the text: /learn react/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;div
+      class=&quot;App&quot;
+    &gt;
+      &lt;div
+        class=&quot;MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-direction-xs-column MuiGrid-align-items-xs-center MuiGrid-justify-xs-center&quot;
+      &gt;
+        &lt;div
+          class=&quot;makeStyles-root-104&quot;
+        &gt;
+          &lt;div
+            class=&quot;MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center&quot;
+          &gt;
+            &lt;div
+              class=&quot;MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-9&quot;
+            &gt;
+              &lt;div
+                class=&quot;MuiFormControl-root MuiTextField-root&quot;
+              &gt;
+                &lt;label
+                  class=&quot;MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated&quot;
+                  data-shrink=&quot;false&quot;
+                  for=&quot;standard-basic&quot;
+                  id=&quot;standard-basic-label&quot;
+                &gt;
+                  Search for a job...
+                &lt;/label&gt;
+                &lt;div
+                  class=&quot;MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl&quot;
+                &gt;
+                  &lt;input
+                    aria-invalid=&quot;false&quot;
+                    class=&quot;MuiInputBase-input MuiInput-input&quot;
+                    id=&quot;standard-basic&quot;
+                    type=&quot;text&quot;
+                    value=&quot;&quot;
+                  /&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div
+              class=&quot;MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-3&quot;
+            &gt;
+              &lt;button
+                class=&quot;MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary&quot;
+                tabindex=&quot;0&quot;
+                type=&quot;button&quot;
+              &gt;
+                &lt;span
+                  class=&quot;MuiButton-label&quot;
+                &gt;
+                  Search
+                &lt;/span&gt;
+                &lt;span
+                  class=&quot;MuiTouchRipple-root&quot;
+                /&gt;
+              &lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;div
+            class=&quot;makeStyles-root-195&quot;
+          &gt;
+            &lt;div
+              class=&quot;MuiPaper-root makeStyles-paper-196 MuiPaper-elevation1 MuiPaper-rounded&quot;
+            &gt;
+              &lt;div
+                class=&quot;MuiTableContainer-root&quot;
+              &gt;
+                &lt;table
+                  aria-label=&quot;enhanced table&quot;
+                  aria-labelledby=&quot;tableTitle&quot;
+                  class=&quot;MuiTable-root makeStyles-table-197&quot;
+                &gt;
+                  &lt;thead
+                    class=&quot;MuiTableHead-root&quot;
+                  &gt;
+                    &lt;tr
+                      class=&quot;MuiTableRow-root MuiTableRow-head&quot;
+                    &gt;
+                      &lt;th
+                        class=&quot;MuiTableCell-root MuiTableCell-head MuiTableCell-paddingCheckbox&quot;
+                        scope=&quot;col&quot;
+                      &gt;
+                        &lt;span
+                          aria-disabled=&quot;false&quot;
+                          class=&quot;MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-256 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary&quot;
+                        &gt;
+                          &lt;span
+                            class=&quot;MuiIconButton-label&quot;
+                          &gt;
+                            &lt;input
+                              aria-label=&quot;select all Jobs&quot;
+                              class=&quot;PrivateSwitchBase-input-259&quot;
+                              data-indeterminate=&quot;false&quot;
+                              type=&quot;checkbox&quot;
+                              value=&quot;&quot;
+                            /&gt;
+                            &lt;svg
+                              aria-hidden=&quot;true&quot;
+                              class=&quot;MuiSvgIcon-root&quot;
+                              focusable=&quot;false&quot;
+                              viewBox=&quot;0 0 24 24&quot;
+                            &gt;
+                              &lt;path
+                                d=&quot;M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z&quot;
+                              /&gt;
+                            &lt;/svg&gt;
+                          &lt;/span&gt;
+                          &lt;span
+                            class=&quot;MuiTouchRipple-root&quot;
+                          /&gt;
+                        &lt;/span&gt;
+                      &lt;/th&gt;
+                      &lt;th
+                        class=&quot;MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft MuiTableCell-paddingNone&quot;
+                        scope=&quot;col&quot;
+                      &gt;
+                        &lt;span
+                          aria-disabled=&quot;false&quot;
+                          class=&quot;MuiButtonBase-root MuiTableSortLabel-root&quot;
+                          role=&quot;button&quot;
+                          tabindex=&quot;0&quot;
+                        &gt;
+                          Job Title
+                          &lt;svg
+                            aria-hidden=&quot;true&quot;
+                            class=&quot;MuiSvgIcon-root MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc&quot;
+                            focusable=&quot;false&quot;
+                            viewBox=&quot;0 0 24 24&quot;
+                          ...
+    at Object.getElementError (/Users/jonathan/projects/jobhunter/node_modules/@testing-library/dom/dist/config.js:34:12)
+    at /Users/jonathan/projects/jobhunter/node_modules/@testing-library/dom/dist/query-helpers.js:71:38
+    at /Users/jonathan/projects/jobhunter/node_modules/@testing-library/dom/dist/query-helpers.js:54:17
+    at Object.&lt;anonymous&gt; (/Users/jonathan/projects/jobhunter/src/App.test.tsx:7:23)
+    at Object.asyncJestTest (/Users/jonathan/projects/jobhunter/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:102:37)
+    at /Users/jonathan/projects/jobhunter/node_modules/jest-jasmine2/build/queueRunner.js:43:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/Users/jonathan/projects/jobhunter/node_modules/jest-jasmine2/build/queueRunner.js:26:19)
+    at /Users/jonathan/projects/jobhunter/node_modules/jest-jasmine2/build/queueRunner.js:73:41
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)</failure>
+      <failure>ReferenceError: fetch is not defined
+    at /Users/jonathan/projects/jobhunter/src/utils/fetchJobs.ts:16:20
+    at step (/Users/jonathan/projects/jobhunter/src/utils/fetchJobs.ts:33:23)
+    at Object.next (/Users/jonathan/projects/jobhunter/src/utils/fetchJobs.ts:14:53)
+    at /Users/jonathan/projects/jobhunter/src/utils/fetchJobs.ts:8:71
+    at new Promise (&lt;anonymous&gt;)
+    at Object.&lt;anonymous&gt;.__awaiter (/Users/jonathan/projects/jobhunter/src/utils/fetchJobs.ts:4:12)
+    at Object.fetchJobs [as default] (/Users/jonathan/projects/jobhunter/src/utils/fetchJobs.ts:41:12)
+    at /Users/jonathan/projects/jobhunter/src/App.tsx:737:50
+    at commitHookEffectListMount (/Users/jonathan/projects/jobhunter/node_modules/react-dom/cjs/react-dom.development.js:19731:26)
+    at commitPassiveHookEffects (/Users/jonathan/projects/jobhunter/node_modules/react-dom/cjs/react-dom.development.js:19769:11)
+    at HTMLUnknownElement.callCallback (/Users/jonathan/projects/jobhunter/node_modules/react-dom/cjs/react-dom.development.js:188:14)
+    at invokeEventListeners (/Users/jonathan/projects/jobhunter/node_modules/jest-environment-jsdom/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:193:27)
+    at HTMLUnknownElementImpl._dispatch (/Users/jonathan/projects/jobhunter/node_modules/jest-environment-jsdom/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:119:9)
+    at HTMLUnknownElementImpl.dispatchEvent (/Users/jonathan/projects/jobhunter/node_modules/jest-environment-jsdom/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:82:17)
+    at HTMLUnknownElementImpl.dispatchEvent (/Users/jonathan/projects/jobhunter/node_modules/jest-environment-jsdom/node_modules/jsdom/lib/jsdom/living/nodes/HTMLElement-impl.js:30:27)
+    at HTMLUnknownElement.dispatchEvent (/Users/jonathan/projects/jobhunter/node_modules/jest-environment-jsdom/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:157:21)
+    at Object.invokeGuardedCallbackDev (/Users/jonathan/projects/jobhunter/node_modules/react-dom/cjs/react-dom.development.js:237:16)
+    at invokeGuardedCallback (/Users/jonathan/projects/jobhunter/node_modules/react-dom/cjs/react-dom.development.js:292:31)
+    at flushPassiveEffectsImpl (/Users/jonathan/projects/jobhunter/node_modules/react-dom/cjs/react-dom.development.js:22853:9)
+    at unstable_runWithPriority (/Users/jonathan/projects/jobhunter/node_modules/scheduler/cjs/scheduler.development.js:653:12)
+    at runWithPriority$1 (/Users/jonathan/projects/jobhunter/node_modules/react-dom/cjs/react-dom.development.js:11039:10)
+    at flushPassiveEffects (/Users/jonathan/projects/jobhunter/node_modules/react-dom/cjs/react-dom.development.js:22820:12)
+    at performSyncWorkOnRoot (/Users/jonathan/projects/jobhunter/node_modules/react-dom/cjs/react-dom.development.js:21737:3)
+    at /Users/jonathan/projects/jobhunter/node_modules/react-dom/cjs/react-dom.development.js:11089:24
+    at unstable_runWithPriority (/Users/jonathan/projects/jobhunter/node_modules/scheduler/cjs/scheduler.development.js:653:12)
+    at runWithPriority$1 (/Users/jonathan/projects/jobhunter/node_modules/react-dom/cjs/react-dom.development.js:11039:10)
+    at flushSyncCallbackQueueImpl (/Users/jonathan/projects/jobhunter/node_modules/react-dom/cjs/react-dom.development.js:11084:7)
+    at flushSyncCallbackQueue (/Users/jonathan/projects/jobhunter/node_modules/react-dom/cjs/react-dom.development.js:11072:3)
+    at batchedUpdates$1 (/Users/jonathan/projects/jobhunter/node_modules/react-dom/cjs/react-dom.development.js:21862:7)
+    at act (/Users/jonathan/projects/jobhunter/node_modules/react-dom/cjs/react-dom-test-utils.development.js:929:14)
+    at Object.render (/Users/jonathan/projects/jobhunter/node_modules/@testing-library/react/dist/pure.js:82:26)
+    at Object.&lt;anonymous&gt; (/Users/jonathan/projects/jobhunter/src/App.test.tsx:6:11)
+    at Object.asyncJestTest (/Users/jonathan/projects/jobhunter/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:102:37)
+    at /Users/jonathan/projects/jobhunter/node_modules/jest-jasmine2/build/queueRunner.js:43:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/Users/jonathan/projects/jobhunter/node_modules/jest-jasmine2/build/queueRunner.js:26:19)
+    at /Users/jonathan/projects/jobhunter/node_modules/jest-jasmine2/build/queueRunner.js:73:41
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)</failure>
+    </testcase>
+  </testsuite>
+</testsuites>
