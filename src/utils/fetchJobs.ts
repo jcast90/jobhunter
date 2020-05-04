@@ -17,7 +17,7 @@ const fetchJobs = async ({
     method: 'GET',
     headers: {
       Accept: 'application/json',
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       category,
@@ -25,7 +25,7 @@ const fetchJobs = async ({
       companyName,
       search,
       limit,
-    })
+    }),
   });
   const jobs = await response.json();
 
